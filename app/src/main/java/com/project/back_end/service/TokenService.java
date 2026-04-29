@@ -65,13 +65,12 @@ public class TokenService {
 
     // ================= EXTRACT IDENTIFIER =================
     public String extractIdentifier(String token) {
-        return Jwts.parserBuilder()
-                .setSigningKey(getSigningKey())
-                .build()
-                .parseClaimsJws(token)
-                .getBody()
-                .getSubject();
-    }
+    return Jwts.parser()
+            .setSigningKey(getSigningKey())
+            .parseClaimsJws(token)
+            .getBody()
+            .getSubject();
+}
 
     // ================= VALIDATE TOKEN =================
     public boolean validateToken(String token, String user) {

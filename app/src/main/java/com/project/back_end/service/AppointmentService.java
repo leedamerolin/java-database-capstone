@@ -93,7 +93,7 @@ public class AppointmentService {
         Map<String, Object> response = new HashMap<>();
 
         // Extract doctorId from token
-        Long doctorId = tokenService.getIdFromToken(token);
+        Long doctorId = tokenService.getIdFromToken(token, "doctor");
 
         LocalDateTime start = date.atStartOfDay();
         LocalDateTime end = date.plusDays(1).atStartOfDay();
