@@ -1,0 +1,34 @@
+name: Compile Java Backend
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+    branches: ["main", "master"]
+
+jobs:
+  compile-backend:
+    name: Compile Backend Code
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+
+      - name: Verify Maven Installation
+        run: mvn -version
+
+      - name: Compile Project
+        run: mvn clean compile
+
+        
