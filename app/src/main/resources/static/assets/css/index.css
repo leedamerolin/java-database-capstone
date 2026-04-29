@@ -1,53 +1,163 @@
-/* this is the style sheet file for index.htlm  */
+/* ================= GLOBAL RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* 
-**Global Reset (`*`)**
+/* ================= BODY ================= */
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
 
-* Remove all default margin and padding.
-* Use `border-box` for sizing to include padding and border in element size.
+/* ================= WRAPPER ================= */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-**Base (`html, body`)**
+/* ================= MAIN CONTENT ================= */
+.main-content {
+    flex: 1;
+    background: url("../images/logo/logo.png") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    padding: 20px;
+}
 
-* Set height to 100% for full viewport layout.
-* Use the `'Roboto'` sans-serif font for modern, clean typography.
+/* ================= HEADING ================= */
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2d2db0;
+    margin-bottom: 30px;
+}
 
-**Layout Wrapper (`.wrapper`)**
+/* ================= BUTTONS ================= */
+.role-buttons {
+    display: flex;
+    gap: 20px;
+}
 
-* Use a vertical flexbox layout.
-* Ensure the wrapper covers at least the full height of the screen (`min-height: 100vh`).
+.role-buttons button {
+    padding: 12px 25px;
+    background-color: #2d2db0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
 
-**Heading (`h2`)**
+.role-buttons button:hover {
+    background-color: #1f1f8a;
+}
 
-* Set a large font size (`48px`) for prominence.
-* Add a bottom margin of `50px` for spacing.
-* Use a dark teal color (`#003e3e`).
-* Make the font bold and use a blended font stack (`'Alegreya', 'Roboto', sans-serif`) for elegant styling.
+/* ================= MODAL ================= */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-**Main Section (`.main-content`)**
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
 
-* Allow the section to grow to fill space with `flex-grow: 1`.
-* Add `40px` of internal padding.
-* Center content both horizontally and vertically using `justify-content` and `align-items`.
-* Display items in a column direction.
-* Center all text.
-* Apply a full-screen background image with:
+/* Close Button */
+#closeModal {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+}
 
-  * `cover` size
-  * `center` positioning
-  * no repeat
-  * `fixed` attachment to keep image still during scroll
+/* ================= HEADER ================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2db0;
+    padding: 10px 20px;
+    color: white;
+}
 
-**Buttons (`button`)**
+.header img {
+    height: 40px;
+}
 
-* Style with a teal green background (`#015c5d`) and white text.
-* Remove borders and round the corners (`12px`).
-* Use `10px 20px` padding and set width to `200px`.
-* Add a top margin of `10px` for spacing.
-* Enable pointer cursor and readable font size (`16px`).
-* On hover, change background color to bold red (`#A62B1F`).
+.header nav a {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+}
 
-**Dashboard Buttons (`.dashboard-btn`)**
+/* ================= FOOTER ================= */
+.footer {
+    background-color: #2d2db0;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
 
-* Use the same base green background (`#015c5d`) as the default button.
-* On hover, darken the background to deep teal (`#003e3e`) for visual feedback.
- */
+/* ================= FORM INPUTS ================= */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Dropdown */
+.select-dropdown {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* Checkbox */
+.checkbox-group {
+    margin: 10px 0;
+}
+
+/* ================= BUTTON TYPES ================= */
+.dashboard-btn {
+    padding: 10px 20px;
+    background-color: #2d2db0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.dashboard-btn:hover {
+    background-color: #1f1f8a;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .role-buttons {
+        flex-direction: column;
+    }
+
+    .header {
+        flex-direction: column;
+    }
+}
