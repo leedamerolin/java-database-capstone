@@ -6,7 +6,6 @@ import { filterDoctors } from './services/doctorServices.js';//call the same fun
 import { patientSignup, patientLogin } from './services/patientServices.js';
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
   loadDoctorCards();
 });
